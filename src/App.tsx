@@ -18,6 +18,9 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
+import Artists from "./pages/Artists";
+import Subscriptions from "./pages/Subsciptions";
+import Admins from "./pages/Admins";
 
 export default function App() {
   return (
@@ -28,6 +31,9 @@ export default function App() {
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
+            <Route index path="/artists" element={<Artists />} />
+            <Route index path="/subscriptions" element={<Subscriptions />} />
+            <Route index path="/admins" element={<Admins />} />
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />

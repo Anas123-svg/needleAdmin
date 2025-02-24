@@ -3,20 +3,16 @@ import { Link, useLocation } from "react-router";
 
 // Assume these icons are imported from an icon library
 import {
-  BoxCubeIcon,
-  CalenderIcon,
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
-  ListIcon,
-  PageIcon,
-  PieChartIcon,
-  PlugInIcon,
-  TableIcon,
   UserCircleIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
+import { HiOutlinePaintBrush } from "react-icons/hi2";
+import { MdOutlineSubscriptions } from "react-icons/md";
+import { RiAdminLine } from "react-icons/ri";
 
 type NavItem = {
   name: string;
@@ -29,20 +25,32 @@ const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
     name: "Dashboard",
-    path: "/"
+    path: "/",
   },
 
+  {
+    icon: <HiOutlinePaintBrush />,
+    name: "Artists",
+    path: "/artists",
+  },
+  {
+    icon: <MdOutlineSubscriptions />,
+    name: "Subscriptions",
+    path: "/subscriptions",
+  },
+  {
+    icon: <RiAdminLine />,
+    name: "Admins",
+    path: "/admins",
+  },
   {
     icon: <UserCircleIcon />,
     name: "User Profile",
     path: "/profile",
   },
-
 ];
 
-const othersItems: NavItem[] = [
-
-];
+const othersItems: NavItem[] = [];
 
 const AppSidebar: React.FC = () => {
   const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
@@ -250,17 +258,17 @@ const AppSidebar: React.FC = () => {
       onMouseEnter={() => !isExpanded && setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-<div
-  className={`py-8 flex ${
-    !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
-  }`}
->
-  <Link to="/">
-    <span className="text-xl font-bold dark:text-white text-black">
-      NEEDLE ADMIN
-    </span>
-  </Link>
-</div>
+      <div
+        className={`py-8 flex ${
+          !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
+        }`}
+      >
+        <Link to="/">
+          <span className="text-xl font-bold dark:text-white text-black">
+            NEEDLE ADMIN
+          </span>
+        </Link>
+      </div>
 
       <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
         <nav className="mb-6">
