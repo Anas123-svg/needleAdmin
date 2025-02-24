@@ -5,7 +5,7 @@ import { ThemeToggleButton } from "../components/common/ThemeToggleButton";
 import UserDropdown from "../components/header/UserDropdown";
 
 const AppHeader: React.FC = () => {
-  const [isApplicationMenuOpen, setApplicationMenuOpen] = useState(false);
+  const [isApplicationMenuOpen] = useState(false);
 
   const { isMobileOpen, toggleSidebar, toggleMobileSidebar } = useSidebar();
 
@@ -16,7 +16,6 @@ const AppHeader: React.FC = () => {
       toggleMobileSidebar();
     }
   };
-
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -77,12 +76,6 @@ const AppHeader: React.FC = () => {
             )}
             {/* Cross Icon */}
           </button>
-
-
-
-
-
-
         </div>
         <div
           className={`${
